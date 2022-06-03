@@ -1,9 +1,22 @@
 import "./navbar.css";
 import { useState} from 'react';
 import avatar from '../../assets/image-avatar.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = ({ cartItems, setCartItems }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+
+  const handleCart = (e) => {
+    if (!e.target.closest(".navCartWrapper")) setOpenCart(!openCart);
+  }
+
+  const handleDeleteCartItem = (position) => {
+    console.log(position);
+    const newCartItems = cartItems.filter((item, index) => index !== position);
+    setCartItems([...newCartItems]);
+  }
   
   return (
     <nav>
@@ -27,7 +40,7 @@ const Navbar = () => {
         {openMenu && 
         <div className="navWrapper">
           <div className="navMenu">
-            {/* Close men */}
+            {/* Close menu */}
             <svg onClick={() => setOpenMenu(!openMenu)} className="closeMenuBtn" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
 
             <ul className="menuList">
@@ -43,8 +56,39 @@ const Navbar = () => {
 
       <div>
         {/* cart */}
-        <svg className="cart" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+        <div className="cart">
+          <svg onClick={() => setOpenCart(!openCart)} width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="currentColor" fill-rule="nonzero"/></svg>
+          <span className={ cartItems.length === 0 ? "cartBadge" : "cartBadge showBadge"}>{cartItems.length}</span>
+        </div>
         
+        {openCart &&
+        <div className="cartContainer" onClick={(e) => handleCart(e)}>
+          <div className="navCartWrapper">
+            <h1>Cart</h1>
+            
+            <div className="cartItemsContainer">
+              {cartItems.length !== 0 ? (
+                <>
+                  {cartItems.map((item, index) => (
+                    <div key={index} className="cartItemsWrapper">
+                      <img src={item.image} alt="itemImage" />
+                      <div>
+                        <p className="ciName">{item.itemName}</p>
+                        <p className="ciDetails">${item.price.toFixed(2)} x {item.quantity} <span>${item.total.toFixed(2)}</span></p>
+                      </div>
+                      {/* delete */}
+                      <FontAwesomeIcon icon={faTrashCan} className="deleteIcon" onClick={() => handleDeleteCartItem(index)}/>
+                    </div>
+                  ))}
+                  <button className="checkoutBtn">Checkout</button>
+                </>
+              ) : (
+                <p>Your cart is empty.</p>
+              )}
+            </div>  
+          </div>
+        </div>}
+
 
         {/* avatar */}
         <img src={avatar} alt="avatar" className="avatar"/>

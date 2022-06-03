@@ -23,6 +23,147 @@ p {
   font-size: 16px;
 }
 
-.app {
-  padding: 0 20px;
+.productCarousel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
+
+.productCarousel img {
+  width: 100%;
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.prev-arrow {
+  left: 20px;
+}
+
+.prev-arrow svg {
+  margin-left: -5px;
+}
+
+.next-arrow {
+  right: 20px;
+}
+
+.next-arrow svg {
+  margin-left: 5px;
+}
+
+.productDetails {
+  padding: 20px;
+}
+
+.productCompany {
+  display: block;
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.productName {
+  font-size: 30px;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.productDesc {
+  color: var(--dark-grayish-blue);
+  line-height: 1.5;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.productPrice {
+  font-size: 25px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.productDiscount {
+  display: inline-block;
+  padding: 3px 7px;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: var(--pale-orange);
+  color: var(--orange);
+  border-radius: 5px;
+}
+
+.pOrigPrice {
+  margin-left: auto;
+  color: var(--grayish-blue);
+  font-weight: 700;
+}
+
+.productQty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-grayish-blue);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.operation {
+  margin-top: -5px;
+  font-weight: 700;
+  color: var(--orange);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.operation:hover {
+  opacity: .5;
+}
+
+.pQtyCount {
+  font-weight: 700;
+}
+
+.cartWrapper {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: var(--orange);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 12px 24px -12px hsla(26, 100%, 55%, 0.5);
+  -webkit-box-shadow: 0px 12px 24px -12px hsla(26, 100%, 55%, 0.5);
+}
+
+.cartWrapper:hover {
+  opacity: .5;
+}
+
+.addCart {
+  margin-right: 20px;
+}
+
