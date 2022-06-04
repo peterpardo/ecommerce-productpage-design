@@ -23,6 +23,10 @@ p {
   font-size: 16px;
 }
 
+.productContainer {
+  max-width: 1250px;
+}
+
 .productCarousel {
   position: relative;
   display: flex;
@@ -33,6 +37,10 @@ p {
 .productCarousel img {
   width: 100%;
   height: auto;
+}
+
+.productImg {
+  display: none;
 }
 
 .arrow {
@@ -66,6 +74,9 @@ p {
 }
 
 .productDetails {
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
   padding: 20px;
 }
 
@@ -165,5 +176,217 @@ p {
 
 .addCart {
   margin-right: 20px;
+}
+
+@media screen and (min-width: 1024px){
+  .productContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .productImgMobile {
+    display: none;
+  }
+
+  .productImg {
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 20px;
+  }
+
+ .thumbnailWrapper {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .thumbnailWrapper > div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 110px;
+   border-radius: 10px;
+   overflow: hidden;
+   cursor: pointer;
+ }
+
+ .thumbnailWrapper img:hover {
+   opacity: .5;
+ }
+
+ .thumbnailWrapper img {
+    width: 100%;
+    height: auto;
+  }
+
+  .active-img {
+    border: 2px solid var(--orange);
+  }
+  
+  .active-img > img{
+    opacity: .5;
+  }
+
+  .productCarousel {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .productCompany {
+    margin-bottom: 20px;
+  }
+
+  .productName {
+    font-size: 45px;
+  }
+
+  .productDesc {
+    font-size: 16px;
+  }
+
+  .priceWrapper {
+    display: block;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .productPrice {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+  }
+
+  .productDiscount {
+    position: absolute;
+    top: 6px;
+    left: 120px;
+    font-size: 16px;
+  }
+
+  .pOrigPrice {
+    margin: 0;
+  }
+
+  .productDetails {
+    max-width: 480px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .productDetails > :last-child {
+    display: flex;
+    align-items: center;
+  }
+
+  .productQty {
+    width: 150px;
+    margin: 0 20px 0 0;
+  }
+
+  .cartWrapper {
+    padding: 15px 60px;
+  }
+
+  .fullCarouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light-black);
+  }
+
+  .fcWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .fcCloseBtn {
+    display: block;
+    margin: 10px 10px 15px auto;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .fcCloseBtn:hover {
+    color: var(--orange);
+  }
+
+  .fcWrapper > img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+
+  .fcArrow {
+    position: absolute;
+    top: 38%;
+    background-color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .fca-prev {
+    left: -25px;
+  }
+
+  .fca-prev svg{
+    margin-left: -5px;
+  }
+
+  .fca-prev svg:hover {
+    color: var(--orange);
+  }
+
+  .fca-next {
+    right: -25px;
+  }
+
+  .fca-next svg {
+    margin-left: 5px;
+  }
+
+  .fca-next svg:hover {
+    color: var(--orange);
+  }
+
+  .fctWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+  }
+
+  .fctWrapper > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+
+  .fctWrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
 

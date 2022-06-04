@@ -8,7 +8,7 @@ nav {
   align-items: center;
   background-color: var(--white);
   padding: 15px 20px;
-  max-width: 1440px;
+  max-width: 1250px;
   width: 100%;
   margin: 0 auto 10px auto;
 }
@@ -66,9 +66,11 @@ nav > div {
 .cartContainer {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  width: 100vw;
+  width: 100%;
+  max-width: 1440px;
   height: 100vh;
   background-color: transparent;
 }
@@ -160,10 +162,11 @@ nav > div {
   height: auto;
   margin-left: 25px;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .avatar:hover {
-  border: 1px solid var(--orange);
+  border: 2px solid var(--orange);
 } 
 
 .navWrapper {
@@ -204,8 +207,10 @@ nav > div {
 
 @media screen and (min-width: 1024px) {
   nav {
-    padding: 20px 0 40px 0;
+    align-items: flex-start;
+    padding: 40px 0 0 0;
     border-bottom: 1px solid var(--grayish-blue);
+    margin-bottom: 80px;
   }
 
   .menu {
@@ -214,12 +219,32 @@ nav > div {
 
   .logo {
     margin-right: 40px;
+    margin-top: -40px;
+  }
+
+  .cart svg {
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .avatar {
+    margin-top: -5px;
   }
 
   .navList {
     display: flex;
     align-items: center;
     list-style: none;
+  }
+
+  .navList li {
+    padding-bottom: 40px;
+  }
+
+  .navList a:hover {
+    color: var(--black);
+    padding-bottom: 37px;
+    border-bottom: 3px solid var(--orange);
   }
   
   .navList li:not(:last-child){
@@ -234,5 +259,10 @@ nav > div {
   .avatar {
     width: 40px;
     margin-left: 40px;
+  }
+
+  .navCartWrapper {
+    top: 90px;
+    right: 20px;
   }
 }

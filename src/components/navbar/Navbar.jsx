@@ -89,7 +89,6 @@ const Navbar = ({ cartItems, setCartItems }) => {
           </div>
         </div>}
 
-
         {/* avatar */}
         <img src={avatar} alt="avatar" className="avatar"/>
       </div>
