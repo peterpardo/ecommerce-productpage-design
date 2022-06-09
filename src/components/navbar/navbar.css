@@ -36,7 +36,7 @@ nav > div {
   position: relative;
 }
 
-.cart svg{
+.cart svg {
   color: var(--dark-grayish-blue);
   cursor: pointer;
   margin-top: 3px;
@@ -94,6 +94,32 @@ nav > div {
 
 .cartItemsContainer {
   padding: 20px;
+}
+
+.ciWrapper {
+  height: 195px;
+  overflow-y: auto;
+}
+
+/* width */
+.ciWrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.ciWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.ciWrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.ciWrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .cartItemsWrapper {
@@ -167,7 +193,7 @@ nav > div {
 
 .avatar:hover {
   border: 2px solid var(--orange);
-} 
+}
 
 .navWrapper {
   position: fixed;
@@ -246,8 +272,8 @@ nav > div {
     padding-bottom: 37px;
     border-bottom: 3px solid var(--orange);
   }
-  
-  .navList li:not(:last-child){
+
+  .navList li:not(:last-child) {
     margin-right: 20px;
   }
 
@@ -255,7 +281,7 @@ nav > div {
     text-decoration: none;
     color: var(--dark-grayish-blue);
   }
-  
+
   .avatar {
     width: 40px;
     margin-left: 40px;
