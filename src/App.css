@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 :root {
   --orange: hsl(26, 100%, 55%);
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 p {
@@ -149,7 +149,7 @@ p {
 }
 
 .operation:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .pQtyCount {
@@ -171,19 +171,20 @@ p {
 }
 
 .cartWrapper:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .addCart {
   margin-right: 20px;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .productContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: auto;
+    padding: 20px 0;
   }
 
   .arrow {
@@ -200,26 +201,26 @@ p {
     border-radius: 20px;
   }
 
- .thumbnailWrapper {
-   display: flex;
-   justify-content: space-between;
- }
+  .thumbnailWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
- .thumbnailWrapper > div {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 110px;
-   border-radius: 10px;
-   overflow: hidden;
-   cursor: pointer;
- }
+  .thumbnailWrapper > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
 
- .thumbnailWrapper img:hover {
-   opacity: .5;
- }
+  .thumbnailWrapper img:hover {
+    opacity: 0.5;
+  }
 
- .thumbnailWrapper img {
+  .thumbnailWrapper img {
     width: 100%;
     height: auto;
   }
@@ -227,9 +228,9 @@ p {
   .active-img {
     border: 2px solid var(--orange);
   }
-  
-  .active-img > img{
-    opacity: .5;
+
+  .active-img > img {
+    opacity: 0.5;
   }
 
   .productCarousel {
@@ -345,7 +346,7 @@ p {
     left: -25px;
   }
 
-  .fca-prev svg{
+  .fca-prev svg {
     margin-left: -5px;
   }
 
@@ -372,7 +373,7 @@ p {
     width: 80%;
   }
 
-  .fctWrapper > div{
+  .fctWrapper > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,4 +390,3 @@ p {
     object-fit: cover;
   }
 }
-
