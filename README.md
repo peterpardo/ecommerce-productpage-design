@@ -1,3 +1,3 @@
 # Ecommerce Product Page Design
 
-Demo Link: https://ecommerce-product-page-design.herokuapp.com/
+Demo Link: https://ecommerce-productpage-design.vercel.app/
